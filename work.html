@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Work — Updated (Video Match)</title>
@@ -1024,132 +1025,77 @@ footer i.fa-brands{
 </style>
 <style>
     /* ======================================================= */
-    /* ===== FINAL MULTI-BREAKPOINT RESPONSIVE STYLES ===== */
+    /* ===== FINAL FORCEFUL RESPONSIVE STYLES ===== */
     /* ======================================================= */
 
-    /* --- Base Styles for All Screens (Mobile First) --- */
-    :root {
-        --page-padding: 24px; /* A variable for consistent spacing */
-    }
-    
-    .header-container,
-    .hero .container,
-    .portfolio,
-    .footer-inner {
-        padding-left: var(--page-padding);
-        padding-right: var(--page-padding);
-    }
-    
-    .hero {
-        padding-top: 100px;
-    }
-
-    .hero .container {
-        grid-template-columns: 1fr; /* Default to a single column */
-        gap: 40px;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 13vw;
-        line-height: 1.0;
-    }
-
-    .hero p.lead {
-        font-size: 16px;
-    }
-
-    /* Stack buttons by default */
-    .hero .container div div {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .category-filters {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: flex-start;
-        margin: 0;
-        padding: 0 var(--page-padding) 20px;
-    }
-    
-    .category {
-        font-size: 18px;
-        padding: 6px 0;
-        margin-right: 24px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-        justify-items: flex-start;
-        text-align: left;
-        gap: 40px;
-    }
-
-    /* --- Small Tablets (768px and up) --- */
-    @media (min-width: 768px) {
+    /* --- Base Mobile & Tablet Styles (991px and below) --- */
+    @media (max-width: 991px) {
         :root {
-            --page-padding: 40px;
+            --page-padding: 24px;
+        }
+    
+        .header-container, .hero .container, .portfolio, .footer-inner {
+            padding-left: var(--page-padding);
+            padding-right: var(--page-padding);
+        }
+    
+        .hero { padding-top: 100px; }
+        .hero .container { grid-template-columns: 1fr; gap: 40px; text-align: left; }
+        .hero h1 { font-size: 13vw; line-height: 1.0; }
+        .hero p.lead { font-size: 16px; }
+        .hero .container div div { flex-direction: column; align-items: flex-start; gap: 20px; }
+        .hero .preview { margin-top: 40px; }
+
+        /* This is the default grid layout for Tablets and Phones */
+        .grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
         }
 
-        .hero .container {
-            text-align: center; /* Center text on tablets */
-        }
-        
-        .hero h1 {
-            font-size: 8vw;
+        .tile {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 4 / 3 !important;
         }
 
-        /* Un-stack the buttons */
-        .hero .container div div {
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+        .category-filters {
+            display: flex; flex-wrap: wrap; 
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0 var(--page-padding) 20px;
+        }
+        .category { font-size: 18px; padding: 6px 0; margin-right: 24px; }
+    
+        .footer-inner {
+            grid-template-columns: 1fr;
+            justify-items: flex-start;
+            text-align: left;
+            gap: 40px;
         }
     }
-    
+
     /* --- Laptops and Desktops (992px and up) --- */
     @media (min-width: 992px) {
-        :root {
-            --page-padding: 60px;
-        }
+        :root { --page-padding: 60px; }
         
-        .hero .container {
-            grid-template-columns: 1fr 440px; /* Two-column layout */
-            gap: 100px; /* Adjust gap for medium screens */
-            text-align: left;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 6vw, 80px); /* Flexible font size */
-        }
+        .grid { display: block; gap: 0; }
+        .tile { width: auto; height: auto; aspect-ratio: auto; }
         
-        /* Put buttons back to their centered row state for two-column layout */
-        .hero .container div div {
-            justify-content: flex-start;
-        }
+        .hero .container { grid-template-columns: 1fr 440px; gap: 100px; text-align: left; }
+        .hero h1 { font-size: clamp(40px, 6vw, 80px); }
+        .hero .container div div { flex-direction: row; align-items: center; gap: 12px; }
 
-        .footer-inner {
-            grid-template-columns: 1fr auto; /* Footer two-column layout */
-            justify-items: flex-start;
-            gap: 28px;
-        }
+        .footer-inner { grid-template-columns: 1fr auto; gap: 28px; }
     }
 
     /* --- Large Desktops (1201px and up) --- */
     @media (min-width: 1201px) {
-        :root {
-            --page-padding: 90px;
-        }
-        
-        .hero .container {
-            gap: 310px; /* Restore the large gap for wide screens */
-        }
+        :root { --page-padding: 90px; }
+        .hero .container { gap: 310px; }
     }
-
 </style>
+   
 
 </head>
 <body>
